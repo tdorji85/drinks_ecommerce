@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cloudbrew — Make room for a little cloud</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-loader" id="page-loader" aria-label="Loading Cloudbrew" role="status">
+      <div class="loader-grid" aria-hidden="true"></div>
+      <span class="loader-brand">cloudbrew</span>
+    </div>
+    <header class="hero" id="home">
+      <div class="wrap">
+        <nav class="nav">
+          <a class="brand" href="#home"
+            ><svg viewBox="0 0 40 30" fill="none">
+              <path
+                d="M5 24c-6-11 7-17 14-12C20 2 36 1 35 13c8 2 4 12-3 11H5Z"
+                fill="white"
+              /></svg
+            >cloudbrew</a
+          >
+          <div class="navlinks">
+            <a href="#menu">Menu</a><a href="#story">Our story</a
+            ><a href="#stores">Stores</a><a href="#footer">Find us</a>
+          </div>
+          <a class="order" href="#menu">Order now</a>
+        </nav>
+        <div class="hero-grid">
+          <div class="copy">
+            <p class="eyebrow">Today’s sip is</p>
+            <h1 id="drink-name">Iced Caramel</h1>
+            <p id="drink-desc">
+              Double espresso, cold milk and rich caramel, poured over ice for
+              your favorite moment.
+            </p>
+            <p class="price" id="drink-price">Nu. 475</p>
+            <button
+              class="cart"
+              onclick="document.querySelector('#menu').scrollIntoView()"
+            >
+              Add to cart
+            </button>
+            <div class="flavors">
+              <button
+                class="flavor active"
+                data-name="Iced Caramel"
+                data-price="Nu. 475"
+                data-color="#f2a93b"
+                data-desc="Double espresso, cold milk and rich caramel, poured over ice for your favorite moment."
+                data-img="assets/iced_caramel_drink_nobg.png"
+              >
+                <img
+                  src="assets/iced_caramel_drink_nobg.png"
+                  alt="Caramel coffee"
+                /><span>Caramel</span></button
+              ><button
+                class="flavor"
+                data-name="Mocha Cloud"
+                data-price="Nu. 510"
+                data-color="#9c7658"
+                data-desc="Silky chocolate, espresso and cold milk topped with a soft cloud of cream."
+                data-img="assets/mocha_cloud_nobg.png"
+              >
+                <img
+                  src="assets/mocha_cloud_nobg.png"
+                  alt="Mocha coffee"
+                /><span>Mocha</span></button
+              ><button
+                class="flavor"
+                data-name="Vanilla Cloud"
+                data-price="Nu. 475"
+                data-color="#d8b866"
+                data-desc="Velvety vanilla, bright espresso and ice, finished with a sweet cream cap."
+                data-img="assets/vanilla_cloud_nobg.png"
+              >
+                <img
+                  src="assets/vanilla_cloud_nobg.png"
+                  alt="Vanilla coffee"
+                /><span>Vanilla</span>
+              </button>
+            </div>
+          </div>
+          <div class="visual" id="visual">
+            <div class="panel" id="panel">
+              <span>cloud</span><span>brew</span>
+            </div>
+            <div class="beans">
+              <i class="bean b1">●</i><i class="bean b2">●</i
+              ><i class="bean b3">●</i><i class="bean b4">●</i>
+            </div>
+            <div class="drink-stage" id="drink-stage">
+              <img
+                class="cup"
+                id="cup"
+                src="assets/iced_caramel_drink_nobg.png"
+                alt="Cloudbrew iced caramel coffee"
+              />
+              <div class="cup-shadow" id="cup-shadow" aria-hidden="true"></div>
+            </div>
+            <div class="cloud left"></div>
+            <div class="cloud right"></div>
+          </div>
+        </div>
+      </div>
+      <div class="wave"></div>
+    </header>
+    <main>
+      <section class="menu" id="menu">
+        <div class="wrap">
+          <div class="menu-head">
+            <h2 class="section-title">Meet the menu</h2>
+            <p>
+              Cold coffee, cloud toppings, and just enough sweetness to make
+              your afternoon feel lighter.
+            </p>
+          </div>
+          <div class="cards">
+            <article class="card" style="--card-bg: #f2a83b">
+              <img src="assets/iced_caramel_drink_nobg.png" alt="Iced caramel" />
+              <h3>Iced Caramel</h3>
+              <div class="card-foot">
+                <strong>Nu. 475</strong
+                ><button class="add" onclick="addItem(this)">Add</button>
+              </div>
+            </article>
+            <article class="card" style="--card-bg: #512819" data-tone="dark">
+              <img src="assets/mocha_cloud_nobg.png" alt="Mocha cloud" />
+              <h3>Mocha Cloud</h3>
+              <div class="card-foot">
+                <strong>Nu. 510</strong><button class="add">Add</button>
+              </div>
+            </article>
+            <article class="card" style="--card-bg: #fce7a4">
+              <img src="assets/vanilla_cloud_nobg.png" alt="Vanilla cloud" />
+              <h3>Vanilla Cloud</h3>
+              <div class="card-foot">
+                <strong>Nu. 475</strong><button class="add">Add</button>
+              </div>
+            </article>
+            <article class="card" style="--card-bg: #fdb0ae">
+              <img src="assets/strawberry_cloud_nobg.png" alt="Strawberry cloud" />
+              <h3>Strawberry Cloud</h3>
+              <div class="card-foot">
+                <strong>Nu. 520</strong><button class="add">Add</button>
+              </div>
+            </article>
+            <article class="card" style="--card-bg: #743a27" data-tone="dark">
+              <img
+                src="assets/caramel_macha_cloud_frappaccino_nobg.png"
+                alt="Caramel matcha"
+              />
+              <h3>Caramel Matcha</h3>
+              <div class="card-foot">
+                <strong>Nu. 535</strong><button class="add">Add</button>
+              </div>
+            </article>
+            <article class="card" style="--card-bg: #fa9aae">
+              <img
+                src="assets/strawberry_matcha_cloud_frappuccino_nobg.png"
+                alt="Strawberry matcha"
+              />
+              <h3>Berry Matcha</h3>
+              <div class="card-foot">
+                <strong>Nu. 545</strong><button class="add">Add</button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="story" id="story">
+        <div class="wrap story-grid">
+          <div>
+            <h2 class="section-title">A little lift<br />in every sip.</h2>
+            <p>
+              Cloudbrew started with one simple idea: coffee should feel like a
+              small bright spot in the day. We make every drink cold, creamy and
+              cheerful — then top it with a little cloud.
+            </p>
+          </div>
+          <div class="cloud-art">
+            <img
+              class="story-cup"
+              src="assets/mocha_cloud_nobg.png"
+              alt="Cloudbrew mocha drink illustration"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer" id="footer">
+      <div class="wrap footer-grid">
+        <div>
+          <h2>cloudbrew</h2>
+          <p>Good coffee. High spirits.</p>
+        </div>
+        <div id="stores">
+          <h3>Find a cloud</h3>
+          <p>14 Skyway Street<br />Brooklyn, NY 11201</p>
+          <p>Mon–Sun · 7am–8pm</p>
+        </div>
+        <div>
+          <h3>Stay in the loop</h3>
+          <p>New drops and good news, once in a while.</p>
+          <div class="newsletter">
+            <input aria-label="Email address" placeholder="Your email" /><button
+              aria-label="Subscribe"
+            >
+              →
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="wrap copyright">
+        © 2025 Cloudbrew Coffee Co. Made for bright days.
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
